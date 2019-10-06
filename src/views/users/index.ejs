@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    </head>
+    <body>
+        <h1 class="text-center title-1"> Lista de Usuários </h1>
+        <a href="usuarios/novo">Novo</a>
+        <table id="users">
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+            </tr>
+            <% users.forEach(function(user){ %>
+                <tr id="user_<%= user._id %>">
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td> 
+                    <td><a href="usuarios/editar/<%= user._id %>">Editar</a></td> 
+                    <td><a href="#" data-ref="<%= user._id %>" data-type="delete">Deletar</a></td> 
+                </tr>
+            <% }) %>
+        </table>    
+        
+        </ul>
+        <script src="public/javascripts/delete.js"></script>
+    </body>
+</html>

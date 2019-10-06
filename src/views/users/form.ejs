@@ -1,0 +1,22 @@
+<% if (typeof validationErrors != "undefined") { %>
+    <% validationErrors.forEach(function(error){ %>
+        <%= error.msg %>
+    <% }) %>
+<% } %>
+
+<% if (user._id) { %>
+    <input type="hidden" name="_method" value="PUT"/>
+<% } %>
+
+<p>
+    Nome:
+    <input type="text" name="name" required value="<%= user.name %>"/>
+</p>
+<p>
+    Email:
+    <input type="email" name="email" required value="<%= user.email %>" />
+</p>
+<p>
+    Senha:
+    <input type="password" name="password" value=""/>
+</p>
